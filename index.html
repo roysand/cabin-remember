@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huskeliste – Hytta</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="hero">
+    <div class="cabin-art">🏔️</div>
+    <h1>Huskeliste for hytta</h1>
+    <p class="subtitle">Sjekk av punktene før du reiser — takk for besøket! ❄️</p>
+  </div>
+
+  <div class="divider">❄ ❄ ❄ ❄ ❄</div>
+
+  <!-- ARRIVAL -->
+  <div class="section winter-only">
+    <div class="section-header">
+      <span class="section-icon">🚪</span>
+      <div>
+        <div class="section-title">Ved ankomst om vinteren</div>
+        <div class="section-desc">Før du slapper av – ta en liten runde ute 🧤</div>
+      </div>
+    </div>
+    <ul class="checklist">
+
+      <li>
+        <div class="cb"></div>
+        <span class="item-emoji">🌨️</span>
+        <span class="item-text">
+          Fjern snø foran alle dører så de kan åpnes uten å «subre» i snøen.
+          <span class="warn-badge">Viktig!</span>
+          <br><small style="color:var(--muted)">Hindrer at gummilistene fryser fast og ødelegges.</small>
+        </span>
+      </li>
+
+      <li>
+        <div class="cb"></div>
+        <span class="item-emoji">🪣</span>
+        <span class="item-text">
+          Heng <strong>sørlandsskuffa</strong> på skigarden, og sett de andre spadene mellom skigarden og sørlandskuffa.
+          <span class="warn-badge">⚠️ Kan blåse bort!</span>
+          <br><small style="color:var(--muted)">Det kan blåse heftig på fjellet – løse spader er ikke morsomme å jage eller lette og finne igjen!</small>
+        </span>
+      </li>
+
+      <li>
+        <div class="cb"></div>
+        <span class="item-emoji">🪵</span>
+        <span class="item-text">
+          Brukte du <strong>ved</strong>? Ta en blå sekk fra uteboden, fyll den fra uthuset og sett den tilbake i uteboden.
+          <br><small style="color:var(--muted)">Hyttekos krever ved – veldig koselig for nestemann at det er ved inne i hytta.</small>
+        </span>
+      </li>
+
+
+    </ul>
+  </div>
+
+  <!-- DEPARTURE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🧳</span>
+      <div>
+        <div class="section-title">Ved avreise fra hytta</div>
+        <div class="section-desc">Sjekk alt av — neste gjest takker deg! 🙏</div>
+      </div>
+    </div>
+    <ul class="checklist">
+
+      <li>
+        <div class="cb"></div>
+        <span class="item-emoji">☕</span>
+        <span class="item-text">
+          Tøm kaffegrut og vask <strong>melkedispenseren</strong> på kaffemaskin.
+          <br><small style="color:var(--muted)">Ingen liker gammel melk. Ingen.</small>
+        </span>
+      </li>
+
+      <li>
+        <div class="cb"></div>
+        <span class="item-emoji">🪟</span>
+        <span class="item-text">Lukk <strong>alle vinduer</strong> i hele hytta.</span>
+      </li>
+
+      <li>
+        <div class="cb"></div>
+        <span class="item-emoji">🔒</span>
+        <span class="item-text">
+          Lås døra på <strong>uteboden</strong> og <strong>uthuset</strong>.
+          <br><small style="color:var(--muted)">Ikke gi ekornet en gratis overnatting.</small>
+        </span>
+      </li>
+
+      <li>
+        <div class="cb"></div>
+        <span class="item-emoji">🍽️</span>
+        <span class="item-text">
+          <strong>Oppvaskmaskinen</strong> trenger ikke å være ferdig før avreise — bare start den!
+          <br><small style="color:var(--muted)">Den er stor nok til å klare seg selv. 💪</small>
+        </span>
+      </li>
+
+      <li class="summer-only">
+        <div class="cb"></div>
+        <span class="item-emoji">🐑</span>
+        <span class="item-text">
+          Lukk <strong>grinda</strong> i skigarden.
+          <span class="warn-badge">Viktig!</span>
+          <br><small style="color:var(--muted)">Så ikke sauene kommer inn på tomta.</small>
+        </span>
+      </li>
+
+      <li>
+        <div class="cb"></div>
+        <span class="item-emoji">🏠</span>
+        <span class="item-text">
+          Lukk og lås <strong>alle dører</strong> på hytta.
+          <span class="warn-badge">Siste sjekk!</span>
+        </span>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap">
+    <div class="progress-label">Din fremgang</div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="bar"></div>
+    </div>
+    <div class="progress-count" id="count">0 av 8 gjort</div>
+  </div>
+
+  <footer>Hytta savner deg allerede ❤️‍🔥</footer>
+
+</div>
+
+<div class="modal-overlay" id="done-modal">
+  <div class="modal-card">
+    <div class="modal-img">🎉🏆🎉</div>
+    <h2 class="modal-title">Bra jobba - velkommen igjen!</h2>
+    <p class="modal-sub">Alt er sjekket av — god tur hjem! 🚗💨</p>
+    <button class="modal-close" id="modal-close">Lukk</button>
+  </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
