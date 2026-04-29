@@ -26,11 +26,10 @@ jobs:
         run: npm run build
 
       - name: Deploy via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          username: ${{ secrets.FTP_USERNAME_ONE }}
-          server: ${{ secrets.FTP_HOST_ONE }}
-          port: 22
-          password: ${{ secrets.FTP_PASSWORD_ONE }}
-          local_path: './dist/*'
-          remote_path: '/www/remember/'
+        run: |
+          sudo apt-get install -y lftp
+          lftp sftp://${{ secrets.FTP_USERNAME_ONE }}:${{ secrets.FTP_PASSWORD_ONE }}@${{ secrets.FTP_HOST_ONE }}:22 <<EOF
+          set sftp:auto-confirm yes
+          mirror -R --delete --verbose ./dist/ /www/remember/
+          bye
+          EOF
