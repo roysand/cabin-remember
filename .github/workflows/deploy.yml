@@ -25,11 +25,12 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy via FTP
+      - name: Deploy via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ secrets.FTP_HOST_ONE }}
+          username: ${{ secrets.FTP_USERNAME_ONE }}
+          password: ${{ secrets.FTP_PASSWORD_ONE }}
+          port: 22
           local-dir: ./dist/
-          server-dir: /public_html/
+          server-dir: /www/remember/
