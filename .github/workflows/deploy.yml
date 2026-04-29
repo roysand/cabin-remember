@@ -26,11 +26,11 @@ jobs:
         run: npm run build
 
       - name: Deploy via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          server: ${{ secrets.FTP_HOST_ONE }}
           username: ${{ secrets.FTP_USERNAME_ONE }}
-          password: ${{ secrets.FTP_PASSWORD_ONE }}
+          server: ${{ secrets.FTP_HOST_ONE }}
           port: 22
-          local-dir: ./dist/
-          server-dir: /www/remember/
+          password: ${{ secrets.FTP_PASSWORD_ONE }}
+          local_path: './dist/*'
+          remote_path: '/www/remember/'
